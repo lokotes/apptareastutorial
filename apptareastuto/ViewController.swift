@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, ExerciseTableViewCellDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExerciseTableViewCellDelegate {
     
     
     func didPressHeartButton(sender: UIButton) {
@@ -72,7 +72,11 @@ class ViewController: UIViewController, UITableViewDataSource, ExerciseTableView
         let tarea = tareas[indexPath.row]
         cell.labelCell.text = tarea.descripcion
         cell.labelestado.text = tarea.estado
-        
+        if(tarea.estado == "En Progreso"){
+            cell.labelestado.textColor = .orange
+        }else{
+            cell.labelestado.textColor = .red
+        }
         cell.delegate = self as? ExerciseTableViewCellDelegate
         
         return cell
@@ -95,21 +99,20 @@ class ViewController: UIViewController, UITableViewDataSource, ExerciseTableView
         }*/
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: IndexPath) -> [UITableViewRowAction]? {
-        /*let rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Rate") { (action , indexPath ) -> Void in
-            self.isEditing = false
-            print("Rate button pressed")
-        }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "Share") { (action , indexPath) -> Void in
-            self.isEditing = false
-            print("Share button pressed")
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Eliminar") { (action, indexpath) in
+            self.tareas.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        return [rateAction, shareAction]*/
-        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "Deletee" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-        })
-        return [deleteAction]
-        
+        deleteAction.backgroundColor = .red
+        let estadoAction = UITableViewRowAction(style: .normal, title: "En Progreso") { (action, indexpath) in
+            self.tareas[indexPath.row].estado = "En Progreso"
+            self.tablatareas.reloadData()
+            
+        }
+        estadoAction.backgroundColor = .orange
+        return [deleteAction, estadoAction]
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
