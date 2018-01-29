@@ -13,6 +13,8 @@
 		DA233640201B7060000CFFF9 /* apptareastuto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA23363E201B7060000CFFF9 /* apptareastuto.xcdatamodeld */; };
 		DA233642201B7060000CFFF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA233641201B7060000CFFF9 /* Assets.xcassets */; };
 		DA233645201B7060000CFFF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA233643201B7060000CFFF9 /* LaunchScreen.storyboard */; };
+		DA23364D201B8D55000CFFF9 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23364C201B8D55000CFFF9 /* ExerciseTableViewCell.swift */; };
+		DA233650201BD061000CFFF9 /* Tarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23364F201BD061000CFFF9 /* Tarea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DA233641201B7060000CFFF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA233644201B7060000CFFF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA233646201B7060000CFFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA23364C201B8D55000CFFF9 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		DA23364F201BD061000CFFF9 /* Tarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				DA233643201B7060000CFFF9 /* LaunchScreen.storyboard */,
 				DA233646201B7060000CFFF9 /* Info.plist */,
 				DA23363E201B7060000CFFF9 /* apptareastuto.xcdatamodeld */,
+				DA23364C201B8D55000CFFF9 /* ExerciseTableViewCell.swift */,
+				DA23364F201BD061000CFFF9 /* Tarea.swift */,
 			);
 			path = apptareastuto;
 			sourceTree = "<group>";
@@ -140,8 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA23363A201B7060000CFFF9 /* ViewController.swift in Sources */,
+				DA23364D201B8D55000CFFF9 /* ExerciseTableViewCell.swift in Sources */,
 				DA233638201B7060000CFFF9 /* AppDelegate.swift in Sources */,
 				DA233640201B7060000CFFF9 /* apptareastuto.xcdatamodeld in Sources */,
+				DA233650201BD061000CFFF9 /* Tarea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
